@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="registration-form">
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-icon">
+            <span><i class="icon icon-user"></i></span>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control item" id="email" placeholder="Email" name="email">
+        </div>
+        
+
+        <div class="form-group">
+            <input type="password" class="form-control item" id="password" placeholder="Password" name="password">
+        </div>
+
+        <div>
+            <p><a href="#">forgot password ?</a></p>
+        </div>
+        <div class="form-control">
+            <!-- <button type="button" class="btn btn-block create-account">Login</button> -->
+            <input type="submit" class="btn btn-block create-account" value="Login">
+        </div>
+
+        <div>
+            <p>if you dont have an student account register <a href="{% url 'student_signup' %}">click</a></p>
+            <p>if you dont have an teacher account register <a href="{% url 'teacher_signup' %}">click</a></p>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+    

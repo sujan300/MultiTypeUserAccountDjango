@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% if user.is_authenticated and  user.is_student %}
+        {% include 'student.html' %}
+    {% elif user.is_is_authenticated and user.is_teacher %}
+        {% include 'teacher.html' %}
+    {% endif %}
+</body>
+</html>

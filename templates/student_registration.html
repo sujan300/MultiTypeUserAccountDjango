@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="registration-form">
+    <form method="POST" action="{% url 'student_signup' %}">
+        {% csrf_token %}
+
+        <div class="form-icon">
+            <span><i class="icon icon-user"></i></span>
+        </div>
+
+
+        <div class="form-group text-center" >
+            <h2>Registration Form Student</h2>
+        </div>
+
+<!-- 
+        <div class="form-group">
+            {{form.email}}
+        </div>
+
+        <div class="form-group">
+            {{form.first_name}}
+        </div>
+
+        <div class="form-group">
+            {{form.last_name}}
+        </div>
+        
+        <div class="form-group">
+            {{form.phone_number}}
+        </div>
+
+
+        <div class="form-group">
+            {{form.password1}}
+        </div>
+
+        <div class="form-group">
+            {{form.password2}}
+        </div>
+
+
+        <div class="form-group">
+            {{form.date_of_birth}}
+        </div>
+
+
+        <div class="form-group">
+            {{form.gender}}
+        </div> -->
+
+
+
+        {{form.as_p}}
+
+
+        <div class="form-group">
+            <input type="submit" value="create" class="btn btn-block create-account">
+        </div>
+
+
+        <div>
+            <p>if you  have an already account <a href="{% url 'login' %}">click</a></p>
+        </div>
+    </form>
+</div>
+{% endblock content %}
